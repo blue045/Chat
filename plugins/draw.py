@@ -2,6 +2,7 @@ from pyrogram import Client, filters, types as t
 from Utils import getText,paginate_models,ImageGeneration
 from bot import Models
 Database = {}
+auth_user = 6941649360
 
 @Client.on_message(filters.command(["draw","create","imagine","dream"]))
 async def draw(_: Client, m: t.Message):
@@ -59,7 +60,7 @@ async def selectModel(_:Client,query:t.CallbackQuery):
     modelName = [i['name'] for i in Models if i['id'] == modelId]
     for i in img_url:
         images.append(t.InputMediaDocument(i))
-    images[-1] = t.InputMediaDocument(img_url[-1],caption=f"Your prompt: `{promptData['prompt']}`\nModel: `{modelName}`\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ @codeflix_bots") # for caption
+    images[-1] = t.InputMediaDocument(img_url[-1],caption=f"Your prompt: `{promptData['prompt']}`\nModel: `{modelName}`\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ @Anime_Kun_Channel") # for caption
     await query.message.delete()
     try:
         del Database[auth_user]
