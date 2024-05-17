@@ -64,7 +64,7 @@
 <p>
 <pre>
 git clone https://github.com/
-cd DaisyAI
+cd
 python3 -m venv venv
 source venv/bin/activate # Linux
 .\venv\Scripts\activate # Windows
